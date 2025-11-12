@@ -6,18 +6,18 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  )
+    return (
+        <div className="App">
+            <Header />
+            <main>
+                <Hero />
+                <About />
+                <Projects />
+                <Contact />
+            </main>
+            <Footer />
+        </div>
+    )
 }
 
 export default App
