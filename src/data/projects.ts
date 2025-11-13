@@ -2,22 +2,53 @@ export interface Project {
     id: number
     title: string
     description: string
+    detailedDescription?: string
     technologies: string[]
     githubUrl?: string
     liveUrl?: string
     imageUrl: string
+    gallery?: string[] // Multiple images for the carousel
+    features?: string[]
 }
 
 export const projects: Project[] = [
     {
         id: 1,
-        title: 'E-Commerce Platform',
+        title: 'ArtAura',
         description:
-            'A full-stack e-commerce application with shopping cart, payment integration, and admin dashboard. Features include product search, user authentication, and order management.',
+            'A creative platform for collaborating artists and art lovers that allowed user  authentication (JWT-based), artwork uploads, buying and selling artworks, upload posts in the feed, participating challenges, and exhibition management.',
+        detailedDescription:
+            'A creative platform for collaborating artists and art lovers that allowed user  authentication (JWT-based), artwork uploads, buying and selling artworks, upload posts in the feed, participating challenges, and exhibition management.',
         technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        githubUrl: 'https://github.com/yourusername/ecommerce',
-        liveUrl: 'https://your-ecommerce-demo.com',
-        imageUrl: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
+        githubUrl: 'https://github.com/msnvaz/ArtAura.git',
+        liveUrl: '/project/1',
+        imageUrl: '/images/project1.png',
+        gallery: [
+            '/images/project1.png',
+            '/images/project1-2.png',
+            '/images/project1-3.png',
+            '/images/project1-4.png',
+            '/images/project1-5.png',
+            '/images/project1-6.png',
+            '/images/project1-7.png',
+            '/images/project1-8.png',
+            '/images/project1-9.png',
+            '/images/project1-10.png',
+            '/images/project1-11.png',
+            '/images/project1-12.png',
+            '/images/project1-13.png',
+            '/images/project1-14.png',
+            
+            
+        ],
+        features: [
+            'User authentication and authorization',
+            'Shopping cart with real-time updates',
+            'Secure payment integration with Stripe',
+            'Admin dashboard for inventory management',
+            'Product search and filtering',
+            'Order tracking system',
+        ],
     },
     {
         id: 2,
@@ -27,7 +58,7 @@ export const projects: Project[] = [
         technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
         githubUrl: 'https://github.com/yourusername/task-manager',
         liveUrl: 'https://your-task-manager.com',
-        imageUrl: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80',
+        imageUrl: '/images/project2.jpg', // Use your own image here
     },
     {
         id: 3,
@@ -37,7 +68,7 @@ export const projects: Project[] = [
         technologies: ['React', 'API Integration', 'Chart.js', 'CSS'],
         githubUrl: 'https://github.com/yourusername/weather-app',
         liveUrl: 'https://your-weather-app.com',
-        imageUrl: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80',
+        imageUrl: '/images/project3.jpg', // Use your own image here
     },
     {
         id: 4,
@@ -46,6 +77,6 @@ export const projects: Project[] = [
             'An analytics dashboard for social media metrics with data visualization, trend analysis, and performance tracking across multiple platforms.',
         technologies: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
         githubUrl: 'https://github.com/yourusername/social-dashboard',
-        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+        imageUrl: '/images/project4.jpg', // Use your own image here
     },
 ]
