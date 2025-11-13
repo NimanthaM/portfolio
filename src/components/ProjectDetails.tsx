@@ -19,6 +19,17 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
         }
     }, [])
 
+    // Auto-play carousel - change image every 3 seconds
+    useEffect(() => {
+        if (!project || !project.gallery || project.gallery.length <= 1) return
+
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % (project.gallery?.length || 1))
+        }, 3000) // Change image every 3 seconds
+
+        return () => clearInterval(interval)
+    }, [project])
+
     if (!project) return null
 
     const images = project.gallery || [project.imageUrl]
@@ -355,6 +366,51 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                                 ✓
                                             </span>
                                             {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {/* My Role */}
+                        {project.myRole && (
+                            <div>
+                                <h3
+                                    style={{
+                                        color: 'var(--primary-color)',
+                                        marginBottom: '1rem',
+                                        fontSize: '1.5rem',
+                                    }}
+                                >
+                                    My Role
+                                </h3>
+                                <ul
+                                    style={{
+                                        listStyle: 'none',
+                                        padding: 0,
+                                        color: 'var(--text-secondary)',
+                                    }}
+                                >
+                                    {project.myRole.map((role, idx) => (
+                                        <li
+                                            key={idx}
+                                            style={{
+                                                marginBottom: '0.75rem',
+                                                paddingLeft: '1.5rem',
+                                                position: 'relative',
+                                                fontSize: '1.05rem',
+                                            }}
+                                        >
+                                            <span
+                                                style={{
+                                                    position: 'absolute',
+                                                    left: 0,
+                                                    color: 'var(--accent-color)',
+                                                }}
+                                            >
+                                                ✓
+                                            </span>
+                                            {role}
                                         </li>
                                     ))}
                                 </ul>

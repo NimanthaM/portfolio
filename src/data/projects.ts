@@ -9,6 +9,7 @@ export interface Project {
     imageUrl: string
     gallery?: string[] // Multiple images for the carousel
     features?: string[]
+    myRole?: string[] // Your contributions/responsibilities in the project
 }
 
 export const projects: Project[] = [
@@ -38,8 +39,8 @@ export const projects: Project[] = [
             '/images/project1-12.png',
             '/images/project1-13.png',
             '/images/project1-14.png',
-            
-            
+
+
         ],
         features: [
             'User authentication and authorization',
@@ -48,6 +49,14 @@ export const projects: Project[] = [
             'Admin dashboard for inventory management',
             'Product search and filtering',
             'Order tracking system',
+        ],
+        myRole: [
+            'Designed and implemented user authentication system with JWT',
+            'Developed the shopping cart functionality with real-time updates',
+            'Integrated Stripe payment gateway for secure transactions',
+            'Built responsive UI components using React',
+            'Implemented RESTful APIs with Node.js and Express',
+            'Managed MongoDB database design and optimization',
         ],
     },
     {
