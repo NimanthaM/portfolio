@@ -175,14 +175,14 @@ const Contact = () => {
                                 📧 Email
                             </h3>
                             <a
-                                href="mailto:your.email@example.com"
+                                href="mailto:nimantham.lk@gmail.com"
                                 style={{
                                     color: 'var(--text-secondary)',
                                     fontSize: '1.1rem',
                                     textDecoration: 'none',
                                 }}
                             >
-                                your.email@example.com
+                                nimantham.lk@gmail.com
                             </a>
                         </div>
 
@@ -192,7 +192,7 @@ const Contact = () => {
                             </h3>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                 <a
-                                    href="https://github.com/yourusername"
+                                    href="https://github.com/NimanthaM/NimanthaM"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
@@ -201,10 +201,10 @@ const Contact = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    GitHub: @yourusername
+                                    GitHub: @NimanthaM
                                 </a>
                                 <a
-                                    href="https://linkedin.com/in/yourusername"
+                                    href="https://www.linkedin.com/in/nimantha-madushan-9293bb286"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
@@ -213,7 +213,7 @@ const Contact = () => {
                                         textDecoration: 'none',
                                     }}
                                 >
-                                    LinkedIn: /in/yourusername
+                                    LinkedIn: /in/nimantha-madushan-9293bb286
                                 </a>
                             </div>
                         </div>
@@ -223,7 +223,7 @@ const Contact = () => {
                                 📍 Location
                             </h3>
                             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-                                Your City, Your Country
+                                Colombo, Sri Lanka
                             </p>
                         </div>
                     </div>
