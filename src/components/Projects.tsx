@@ -4,6 +4,14 @@ import ProjectDetails from './ProjectDetails'
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState<number | null>(null)
+    const [githubDropdowns, setGithubDropdowns] = useState<Record<number, boolean>>({})
+
+    const toggleGithubDropdown = (projectId: number) => {
+        setGithubDropdowns((prev) => ({
+            ...prev,
+            [projectId]: !prev[projectId],
+        }))
+    }
 
     return (
         <>
@@ -28,7 +36,7 @@ const Projects = () => {
                                 key={project.id}
                                 className="card"
                                 style={{
-                                    overflow: 'hidden',
+                                    overflow: 'visible',
                                     padding: 0,
                                     animation: `fadeIn 0.6s ease-out ${index * 0.1}s backwards`,
                                 }}
@@ -110,8 +118,84 @@ const Projects = () => {
                                     </div>
 
                                     {/* Links */}
-                                    <div style={{ display: 'flex', gap: '1rem' }}>
-                                        {project.githubUrl && (
+                                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                                        {project.githubFrontend && project.githubBackend ? (
+                                            <div style={{ position: 'relative' }}>
+                                                <button
+                                                    onClick={() => toggleGithubDropdown(project.id)}
+                                                    className="btn btn-outline"
+                                                    style={{
+                                                        padding: '0.6rem 1.2rem',
+                                                        fontSize: '0.9rem',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: '0.5rem',
+                                                    }}
+                                                >
+                                                    🔗 GitHub
+                                                    <span
+                                                        style={{
+                                                            transition: 'transform 0.3s ease',
+                                                            transform: githubDropdowns[project.id]
+                                                                ? 'rotate(180deg)'
+                                                                : 'rotate(0deg)',
+                                                        }}
+                                                    >
+                                                        ▼
+                                                    </span>
+                                                </button>
+                                                {githubDropdowns[project.id] && (
+                                                    <div
+                                                        style={{
+                                                            position: 'absolute',
+                                                            top: '100%',
+                                                            left: 0,
+                                                            marginTop: '0.5rem',
+                                                            display: 'flex',
+                                                            flexDirection: 'column',
+                                                            gap: '0.5rem',
+                                                            backgroundColor: 'var(--bg-secondary)',
+                                                            border: '1px solid var(--primary-color)',
+                                                            borderRadius: '8px',
+                                                            padding: '0.5rem',
+                                                            minWidth: '180px',
+                                                            zIndex: 100,
+                                                            boxShadow: '0 4px 20px rgba(96, 165, 250, 0.3)',
+                                                            animation: 'fadeIn 0.2s ease-out',
+                                                        }}
+                                                    >
+                                                        <a
+                                                            href={project.githubFrontend}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="btn btn-outline"
+                                                            style={{
+                                                                width: '100%',
+                                                                padding: '0.5rem 1rem',
+                                                                fontSize: '0.85rem',
+                                                                justifyContent: 'flex-start',
+                                                            }}
+                                                        >
+                                                            📱 Frontend
+                                                        </a>
+                                                        <a
+                                                            href={project.githubBackend}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="btn btn-outline"
+                                                            style={{
+                                                                width: '100%',
+                                                                padding: '0.5rem 1rem',
+                                                                fontSize: '0.85rem',
+                                                                justifyContent: 'flex-start',
+                                                            }}
+                                                        >
+                                                            ⚙️ Backend
+                                                        </a>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ) : project.githubUrl ? (
                                             <a
                                                 href={project.githubUrl}
                                                 target="_blank"
@@ -124,7 +208,7 @@ const Projects = () => {
                                             >
                                                 🔗 GitHub
                                             </a>
-                                        )}
+                                        ) : null}
                                         <button
                                             onClick={() => setSelectedProject(project.id)}
                                             className="btn btn-primary"

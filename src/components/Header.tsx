@@ -89,6 +89,23 @@ const Header = () => {
                         <a
                             onClick={(e) => {
                                 e.preventDefault()
+                                scrollToSection('hackathons')
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                fontSize: '1rem',
+                                fontWeight: 500,
+                                color: 'var(--text-primary)',
+                                transition: 'color 0.3s ease',
+                            }}
+                        >
+                            Hackathons
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            onClick={(e) => {
+                                e.preventDefault()
                                 scrollToSection('contact')
                             }}
                             style={{
@@ -153,6 +170,17 @@ const Header = () => {
                                 style={{ cursor: 'pointer', fontSize: '1.1rem' }}
                             >
                                 Projects
+                            </a>
+                        </li>
+                        <li style={{ padding: '0.75rem 0' }}>
+                            <a
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    scrollToSection('hackathons')
+                                }}
+                                style={{ cursor: 'pointer', fontSize: '1.1rem' }}
+                            >
+                                Hackathons
                             </a>
                         </li>
                         <li style={{ padding: '0.75rem 0' }}>

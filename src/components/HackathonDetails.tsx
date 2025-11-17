@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react'
-import { projects } from '../data/projects'
+import { hackathons } from '../data/hackathons'
 
-interface ProjectDetailsProps {
-    projectId: number
+interface HackathonDetailsProps {
+    hackathonId: number
     onClose: () => void
 }
 
-const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
-    const project = projects.find((p) => p.id === projectId)
+const HackathonDetails = ({ hackathonId, onClose }: HackathonDetailsProps) => {
+    const hackathon = hackathons.find((h) => h.id === hackathonId)
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
     const [touchStart, setTouchStart] = useState(0)
     const [touchEnd, setTouchEnd] = useState(0)
-    const [showGithubDropdown, setShowGithubDropdown] = useState(false)
 
     useEffect(() => {
         document.body.style.overflow = 'hidden'
@@ -22,18 +21,18 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
 
     // Auto-play carousel - change image every 3 seconds
     useEffect(() => {
-        if (!project || !project.gallery || project.gallery.length <= 1) return
+        if (!hackathon || !hackathon.gallery || hackathon.gallery.length <= 1) return
 
         const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % (project.gallery?.length || 1))
-        }, 3000) // Change image every 3 seconds
+            setCurrentImageIndex((prev) => (prev + 1) % (hackathon.gallery?.length || 1))
+        }, 3000)
 
         return () => clearInterval(interval)
-    }, [project])
+    }, [hackathon])
 
-    if (!project) return null
+    if (!hackathon) return null
 
-    const images = project.gallery || [project.imageUrl]
+    const images = hackathon.gallery || [hackathon.imageUrl]
 
     const nextImage = () => {
         setCurrentImageIndex((prev) => (prev + 1) % images.length)
@@ -58,11 +57,9 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
 
     const handleTouchEnd = () => {
         if (touchStart - touchEnd > 75) {
-            // Swipe left
             nextImage()
         }
         if (touchStart - touchEnd < -75) {
-            // Swipe right
             prevImage()
         }
     }
@@ -118,21 +115,57 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                     ✕
                 </button>
 
-                {/* Project Content */}
+                {/* Hackathon Content */}
                 <div style={{ marginTop: '4rem', animation: 'slideInLeft 0.5s ease-out' }}>
-                    {/* Project Title */}
+                    {/* Achievement Badge */}
+                    {hackathon.achievement && (
+                        <div
+                            style={{
+                                display: 'inline-block',
+                                padding: '0.5rem 1.5rem',
+                                backgroundColor: 'rgba(52, 211, 153, 0.15)',
+                                border: '2px solid var(--accent-color)',
+                                borderRadius: '25px',
+                                color: 'var(--accent-color)',
+                                fontWeight: 600,
+                                fontSize: '0.95rem',
+                                marginBottom: '1rem',
+                            }}
+                        >
+                            🏆 {hackathon.achievement}
+                        </div>
+                    )}
+
+                    {/* Hackathon Title */}
                     <h1
                         style={{
                             fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                            marginBottom: '1rem',
+                            marginBottom: '0.5rem',
                             background: 'var(--gradient-primary)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
                         }}
                     >
-                        {project.title}
+                        {hackathon.title}
                     </h1>
+
+                    {/* Event Info */}
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '1.5rem',
+                            marginBottom: '2rem',
+                            color: 'var(--text-secondary)',
+                            fontSize: '1rem',
+                        }}
+                    >
+                        <span>📅 {hackathon.date}</span>
+                        <span>🎯 {hackathon.event}</span>
+                        {hackathon.teamSize && <span>👥 Team of {hackathon.teamSize}</span>}
+                        {hackathon.role && <span>💼 {hackathon.role}</span>}
+                    </div>
 
                     {/* Technologies */}
                     <div
@@ -143,7 +176,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                             marginBottom: '2rem',
                         }}
                     >
-                        {project.technologies.map((tech, idx) => (
+                        {hackathon.technologies.map((tech, idx) => (
                             <span
                                 key={idx}
                                 style={{
@@ -185,7 +218,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                 <img
                                     key={idx}
                                     src={img}
-                                    alt={`${project.title} screenshot ${idx + 1}`}
+                                    alt={`${hackathon.title} screenshot ${idx + 1}`}
                                     style={{
                                         position: 'absolute',
                                         width: '100%',
@@ -206,27 +239,30 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                     onClick={prevImage}
                                     style={{
                                         position: 'absolute',
-                                        left: '1rem',
                                         top: '50%',
+                                        left: '1rem',
                                         transform: 'translateY(-50%)',
                                         width: '50px',
                                         height: '50px',
                                         borderRadius: '50%',
-                                        background: 'rgba(0, 0, 0, 0.6)',
+                                        background: 'rgba(15, 23, 42, 0.8)',
                                         border: '2px solid var(--primary-color)',
-                                        color: 'white',
+                                        color: 'var(--primary-color)',
                                         fontSize: '1.5rem',
                                         cursor: 'pointer',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         transition: 'all 0.3s ease',
+                                        zIndex: 10,
                                     }}
                                     onMouseOver={(e) => {
                                         e.currentTarget.style.background = 'var(--primary-color)'
+                                        e.currentTarget.style.color = 'var(--bg-dark)'
                                     }}
                                     onMouseOut={(e) => {
-                                        e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'
+                                        e.currentTarget.style.background = 'rgba(15, 23, 42, 0.8)'
+                                        e.currentTarget.style.color = 'var(--primary-color)'
                                     }}
                                 >
                                     ‹
@@ -235,27 +271,30 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                     onClick={nextImage}
                                     style={{
                                         position: 'absolute',
-                                        right: '1rem',
                                         top: '50%',
+                                        right: '1rem',
                                         transform: 'translateY(-50%)',
                                         width: '50px',
                                         height: '50px',
                                         borderRadius: '50%',
-                                        background: 'rgba(0, 0, 0, 0.6)',
+                                        background: 'rgba(15, 23, 42, 0.8)',
                                         border: '2px solid var(--primary-color)',
-                                        color: 'white',
+                                        color: 'var(--primary-color)',
                                         fontSize: '1.5rem',
                                         cursor: 'pointer',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         transition: 'all 0.3s ease',
+                                        zIndex: 10,
                                     }}
                                     onMouseOver={(e) => {
                                         e.currentTarget.style.background = 'var(--primary-color)'
+                                        e.currentTarget.style.color = 'var(--bg-dark)'
                                     }}
                                     onMouseOut={(e) => {
-                                        e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'
+                                        e.currentTarget.style.background = 'rgba(15, 23, 42, 0.8)'
+                                        e.currentTarget.style.color = 'var(--primary-color)'
                                     }}
                                 >
                                     ›
@@ -263,16 +302,14 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                             </>
                         )}
 
-                        {/* Dots Indicator */}
+                        {/* Dot Indicators */}
                         {images.length > 1 && (
                             <div
                                 style={{
-                                    position: 'absolute',
-                                    bottom: '1.5rem',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
                                     display: 'flex',
+                                    justifyContent: 'center',
                                     gap: '0.5rem',
+                                    marginTop: '1.5rem',
                                 }}
                             >
                                 {images.map((_, idx) => (
@@ -283,11 +320,11 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                             width: idx === currentImageIndex ? '30px' : '10px',
                                             height: '10px',
                                             borderRadius: '5px',
-                                            background:
+                                            border: 'none',
+                                            backgroundColor:
                                                 idx === currentImageIndex
                                                     ? 'var(--primary-color)'
-                                                    : 'rgba(255, 255, 255, 0.4)',
-                                            border: 'none',
+                                                    : 'rgba(96, 165, 250, 0.3)',
                                             cursor: 'pointer',
                                             transition: 'all 0.3s ease',
                                         }}
@@ -297,7 +334,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                         )}
                     </div>
 
-                    {/* Project Details */}
+                    {/* Hackathon Details */}
                     <div
                         style={{
                             display: 'grid',
@@ -324,12 +361,12 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                     lineHeight: 1.8,
                                 }}
                             >
-                                {project.detailedDescription || project.description}
+                                {hackathon.detailedDescription || hackathon.description}
                             </p>
                         </div>
 
                         {/* Features */}
-                        {project.features && (
+                        {hackathon.features && (
                             <div>
                                 <h3
                                     style={{
@@ -347,7 +384,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                         color: 'var(--text-secondary)',
                                     }}
                                 >
-                                    {project.features.map((feature, idx) => (
+                                    {hackathon.features.map((feature, idx) => (
                                         <li
                                             key={idx}
                                             style={{
@@ -373,8 +410,8 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                             </div>
                         )}
 
-                        {/* My Role */}
-                        {project.myRole && (
+                        {/* My Contributions */}
+                        {hackathon.myContributions && (
                             <div>
                                 <h3
                                     style={{
@@ -383,7 +420,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                         fontSize: '1.5rem',
                                     }}
                                 >
-                                    My Role
+                                    My Contributions
                                 </h3>
                                 <ul
                                     style={{
@@ -392,7 +429,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                         color: 'var(--text-secondary)',
                                     }}
                                 >
-                                    {project.myRole.map((role, idx) => (
+                                    {hackathon.myContributions.map((contribution, idx) => (
                                         <li
                                             key={idx}
                                             style={{
@@ -411,7 +448,7 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                                             >
                                                 ✓
                                             </span>
-                                            {role}
+                                            {contribution}
                                         </li>
                                     ))}
                                 </ul>
@@ -430,86 +467,18 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
                             alignItems: 'flex-start',
                         }}
                     >
-                        {project.githubFrontend && project.githubBackend ? (
-                            <div style={{ position: 'relative' }}>
-                                <button
-                                    onClick={() => setShowGithubDropdown(!showGithubDropdown)}
-                                    className="btn btn-outline"
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '0.5rem',
-                                    }}
-                                >
-                                    🔗 View Code
-                                    <span
-                                        style={{
-                                            transition: 'transform 0.3s ease',
-                                            transform: showGithubDropdown ? 'rotate(180deg)' : 'rotate(0deg)',
-                                        }}
-                                    >
-                                        ▼
-                                    </span>
-                                </button>
-                                {showGithubDropdown && (
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            top: '100%',
-                                            left: 0,
-                                            marginTop: '0.5rem',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            gap: '0.5rem',
-                                            backgroundColor: 'var(--bg-secondary)',
-                                            border: '1px solid var(--primary-color)',
-                                            borderRadius: '8px',
-                                            padding: '0.5rem',
-                                            minWidth: '200px',
-                                            zIndex: 1000,
-                                            boxShadow: '0 4px 20px rgba(96, 165, 250, 0.3)',
-                                            animation: 'fadeIn 0.2s ease-out',
-                                        }}
-                                    >
-                                        <a
-                                            href={project.githubFrontend}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn btn-outline"
-                                            style={{
-                                                width: '100%',
-                                                justifyContent: 'flex-start',
-                                            }}
-                                        >
-                                            📱 Frontend
-                                        </a>
-                                        <a
-                                            href={project.githubBackend}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn btn-outline"
-                                            style={{
-                                                width: '100%',
-                                                justifyContent: 'flex-start',
-                                            }}
-                                        >
-                                            ⚙️ Backend
-                                        </a>
-                                    </div>
-                                )}
-                            </div>
-                        ) : project.githubUrl ? (
+                        {hackathon.projectUrl && (
                             <a
-                                href={project.githubUrl}
+                                href={hackathon.projectUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-outline"
                             >
-                                🔗 View Code
+                                🔗 View Project
                             </a>
-                        ) : null}
+                        )}
                         <button onClick={onClose} className="btn btn-primary">
-                            ← Back to Portfolio
+                            ← Back to Hackathons
                         </button>
                     </div>
                 </div>
@@ -518,4 +487,4 @@ const ProjectDetails = ({ projectId, onClose }: ProjectDetailsProps) => {
     )
 }
 
-export default ProjectDetails
+export default HackathonDetails
