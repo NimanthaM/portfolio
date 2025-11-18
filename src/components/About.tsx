@@ -38,7 +38,7 @@ const About = () => {
                             Who I Am
                         </h3>
                         <p style={{ marginBottom: '1rem' }}>
-                        A dedicated Computer Science undergraduate at the University of Colombo School of Computing,
+                            A dedicated Computer Science undergraduate at the University of Colombo School of Computing,
                             specializing in full-stack development. My passion lies in crafting elegant solutions to complex
                             problems and building scalable applications that deliver real value.
                         </p>
@@ -60,7 +60,11 @@ const About = () => {
                                     BSc. In Computer Science
                                 </h5>
                                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                                    University Of Colombo School of Computing • Expected Graduation: 2025
+                                    University Of Colombo School of Computing
+                                    <br />
+                                    Expected Graduation: 2025
+                                    <br />
+                                    Current GPA: 3.4
                                 </p>
                             </div>
 
@@ -70,9 +74,11 @@ const About = () => {
                                 </h5>
 
                                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                                    Ananda College, Colombo 10 •
+                                    Ananda College, Colombo 10
+                                    <br />
                                     O/L - 9A's
-                                    A/L - 1A,2B's - Physical Science Stream
+                                    <br />
+                                    A/L - 1A, 2B's - Physical Science Stream
                                 </p>
                             </div>
 
