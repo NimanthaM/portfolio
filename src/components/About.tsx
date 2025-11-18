@@ -1,11 +1,19 @@
 const About = () => {
     const skills = [
-        { name: 'JavaScript', level: 90 },
-        { name: 'TypeScript', level: 85 },
-        { name: 'React', level: 88 },
+        { name: 'Java Spring Boot', level: 85 },
+
+
+        { name: 'React', level: 90 },
         { name: 'Node.js', level: 80 },
-        { name: 'Python', level: 85 },
+        { name: 'Python', level: 80 },
+        { name: 'JavaScript', level: 80 },
+
+        { name: 'MySQL', level: 90 },
+        { name: 'C', level: 85 },
+        { name: 'C++', level: 85 },
+        { name: 'Scala', level: 75 },
         { name: 'Git', level: 90 },
+
     ]
 
     return (
@@ -30,29 +38,44 @@ const About = () => {
                             Who I Am
                         </h3>
                         <p style={{ marginBottom: '1rem' }}>
-                            I'm a passionate software engineering student with a strong foundation in
-                            full-stack development. I love solving complex problems and building
-                            applications that make a difference.
+                        A dedicated Computer Science undergraduate at the University of Colombo School of Computing,
+                            specializing in full-stack development. My passion lies in crafting elegant solutions to complex
+                            problems and building scalable applications that deliver real value.
                         </p>
                         <p style={{ marginBottom: '1rem' }}>
-                            Currently seeking internship opportunities where I can contribute my skills,
-                            learn from experienced professionals, and grow as a developer.
+                            With a strong foundation in modern web technologies and software engineering principles,
+                            I thrive on transforming innovative ideas into functional, user-centric applications.
+                            My experience spans across the entire development lifecycle, from conceptualization to deployment.
                         </p>
                         <p>
-                            When I'm not coding, you can find me exploring new technologies, contributing
-                            to open-source projects, or learning about the latest trends in software development.
+                            Beyond coding, I'm an avid learner who stays current with emerging technologies, participates
+                            in hackathons, and continuously expands my technical expertise. I believe in writing clean,
+                            maintainable code and following industry best practices.
                         </p>
 
                         <div style={{ marginTop: '2rem' }}>
                             <h4 style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>Education</h4>
                             <div className="card" style={{ padding: '1.5rem' }}>
                                 <h5 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>
-                                    Bachelor of Computer Science
+                                    BSc. In Computer Science
                                 </h5>
                                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                                    Your University • Expected Graduation: 2025
+                                    University Of Colombo School of Computing • Expected Graduation: 2025
                                 </p>
                             </div>
+
+                            <div className="card" style={{ padding: '1.5rem', marginTop: '1rem' }}>
+                                <h5 style={{ color: 'var(--primary-color)', marginBottom: '0.5rem' }}>
+                                    GCE O/L and A/L
+                                </h5>
+
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
+                                    Ananda College, Colombo 10 •
+                                    O/L - 9A's
+                                    A/L - 1A,2B's - Physical Science Stream
+                                </p>
+                            </div>
+
                         </div>
                     </div>
 

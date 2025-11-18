@@ -132,7 +132,8 @@ const HackathonDetails = ({ hackathonId, onClose }: HackathonDetailsProps) => {
                                 marginBottom: '1rem',
                             }}
                         >
-                            🏆 {hackathon.achievement}
+                            {hackathon.achievement.toLowerCase().includes('organizing') ? '' : '🏆 '}
+                            {hackathon.achievement}
                         </div>
                     )}
 

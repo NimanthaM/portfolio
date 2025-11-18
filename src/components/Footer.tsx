@@ -38,7 +38,7 @@ const Footer = () => {
                                 WebkitTextFillColor: 'transparent',
                             }}
                         >
-                            YourName
+                            Nimantha Madushan
                         </h3>
                         <p style={{ color: 'rgba(255, 255, 255, 0.7)', lineHeight: 1.6 }}>
                             Software Engineering Intern seeking opportunities to build innovative solutions and
@@ -122,7 +122,7 @@ const Footer = () => {
                     }}
                 >
                     <p>
-                        © {currentYear} YourName. Built with React & TypeScript. All rights reserved.
+                        © {currentYear} Nimantha Madushan. Built with React & TypeScript. All rights reserved .
                     </p>
                 </div>
             </div>

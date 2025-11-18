@@ -19,90 +19,81 @@ export interface Hackathon {
 export const hackathons: Hackathon[] = [
     {
         id: 1,
-        title: 'Smart City Solution',
-        event: 'HackX 2024',
-        date: 'March 15-17, 2024',
+        title: 'Hacktivate \'25',
+        event: 'NSBM Green University',
+        date:  '2025',
         description:
-            'Developed an IoT-based smart parking system that helps drivers find available parking spots in real-time, reducing traffic congestion and pollution.',
+            'Developed a collaborative university web based platform for seamless interaction between Students and Lecturers. The platform includes features such as course management, assignment submissions, grading systems, and real-time notifications to enhance the academic experience.',
         detailedDescription:
-            'Our team created a comprehensive smart parking solution using IoT sensors, real-time data processing, and a mobile app. The system includes sensor integration, a cloud backend for data processing, and an intuitive mobile interface for users to locate and reserve parking spots.',
-        achievement: '1st Place Winner',
-        technologies: ['React Native', 'Node.js', 'MongoDB', 'Arduino', 'MQTT'],
-        teamSize: 4,
+            'Developed a collaborative university web based platform "UniHub" for seamless interaction between Students and Lecturers. Out of 25+ teams from across Sri Lanka, we were excited to be selected among the top 12 finalists, competing alongside some of the best young innovators in the country.',
+        achievement: 'Finalists - Top 12',
+        technologies: [],
+        teamSize: 5,
         role: 'Full-Stack Developer',
         imageUrl: '/images/hackathon1.jpeg',
         gallery: [
-            '/images/hackathon1.png',
-            '/images/hackathon1-2.png',
-            '/images/hackathon1-3.png',
+            '/images/hackathon1.jpeg',
+            '/images/hackathon1-2.jpeg',
+            '/images/hackathon1-3.jpeg',
+            '/images/hackathon1-4.jpeg',
+            '/images/hackathon1-5.jpeg',
         ],
         features: [
-            'Real-time parking availability tracking',
-            'Mobile app for iOS and Android',
-            'Payment integration',
-            'Historical data analytics',
-            'Admin dashboard for parking lot management',
+            'User Authentication & Authorization',
+            'Query Categorization & Ticketing System',
+            'Appointment Scheduling System',
+            'Broadcast Announcements',
+            'Feedback System',
+            'Peer Learning Platform',
+            'Gemini-powered AI for past paper question solving',
         ],
-        myContributions: [
-            'Designed and implemented the REST API backend',
-            'Built the real-time notification system',
-            'Integrated payment gateway',
-            'Developed admin dashboard',
-        ],
-        projectUrl: 'https://github.com/yourusername/smart-parking',
+        
+        
+        // projectUrl: 'https://drive.google.com/file/d/1SQ_mc_1ell6q1zyU23qjv6 ekvcpPllW/view?usp=sharing',
     },
     {
         id: 2,
-        title: 'Health Tracker AI',
-        event: 'MedHacks 2024',
-        date: 'June 8-9, 2024',
+        title: 'Beauty of Cloud ',
+        event: 'Facalty of Engineering, University of Jayawardenepura',
+        date: '2025',
         description:
-            'An AI-powered health tracking app that analyzes user data to provide personalized health recommendations and early warning signs of potential health issues.',
+            'Beauty of Cloud is a Cloud based Ideathon organized by IEEE Student Branch of University of Sri Jayewardenepura. Reaching the Finals was a truly rewarding milestone for us.',
         detailedDescription:
-            'Built a comprehensive health tracking application that uses machine learning to analyze user health metrics, activity patterns, and lifestyle data to provide personalized recommendations and early detection of health concerns.',
-        achievement: 'Best AI Implementation',
-        technologies: ['Python', 'TensorFlow', 'Flutter', 'Firebase'],
-        teamSize: 3,
-        role: 'ML Engineer & Backend Developer',
+            'Team SkyDevs from University of Colombo School of Computing had the amazing opportunity to compete in the Beauty of Cloud Ideathon, organized by the IEEE Student Branch of University of Sri Jayewardenepura. We presented a AWS services based solution that leveraged cloud computing to address a real-world challenge.Reaching the Finals was a truly rewarding milestone for us. Throughout this journey, we were able to brainstorm innovative solutions, strengthen our technical and problem-solving skills, and most importantly, experience the power of teamwork and collaboration.',
+        achievement: 'Finalysts - Top 5',
+        technologies: [],
+        teamSize: 5,
+        
         imageUrl: '/images/hackathon2.jpeg',
-        features: [
-            'AI-powered health predictions',
-            'Wearable device integration',
-            'Personalized health recommendations',
-            'Medication reminders',
-            'Doctor appointment scheduling',
+
+        gallery: [
+            '/images/hackathon2.jpeg',
+            '/images/hackathon2-2.jpeg',
+            '/images/hackathon2-3.jpeg',
+            '/images/hackathon2-4.jpeg',
+            
         ],
-        myContributions: [
-            'Developed machine learning models for health prediction',
-            'Built the data pipeline for processing health metrics',
-            'Implemented Firebase backend services',
-            'Created data visualization components',
-        ],
+
+        
     },
     {
         id: 3,
-        title: 'EcoTrade Platform',
-        event: 'GreenTech Hackathon 2024',
+        title: 'Code Quest',
+        event: 'Virtusa',
         date: 'September 20-22, 2024',
         description:
-            'A peer-to-peer marketplace for buying, selling, and exchanging eco-friendly products with a carbon footprint calculator and sustainability scoring system.',
-        achievement: 'Finalist - Top 5',
-        technologies: ['React', 'Express', 'PostgreSQL', 'Stripe'],
-        teamSize: 5,
-        role: 'Frontend Lead',
-        imageUrl: '/images/hackathon3.jpg',
-        features: [
-            'User authentication and profiles',
-            'Product listings with sustainability scores',
-            'Carbon footprint calculator',
-            'Secure payment processing',
-            'Community forum',
+            'I had an opportunity to be part of the organizing committee as a Program Team member for Code Quest: Vault Edition, a CTF based hackathon event organized by IEEE Student branch of UCSC. This experience allowed me to contribute to the planning and execution of the event, ensuring a smooth and engaging experience for all participants.',
+        achievement: 'Organizing Committee ',
+        technologies: [],
+        imageUrl: '/images/hackathon3.jpeg.jpg',
+gallery: [
+            '/images/hackathon3.jpeg.jpg',
+            '/images/hackathon3-1.jpeg.jpg',
+            '/images/hackathon3-2.jpeg.jpg',
+            '/images/hackathon3-3.jpeg.jpg',
+            
         ],
-        myContributions: [
-            'Led frontend development with React',
-            'Designed and implemented UI/UX',
-            'Built the product search and filtering system',
-            'Integrated Stripe payment gateway',
-        ],
+
+        
     },
 ]

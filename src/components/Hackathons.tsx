@@ -60,7 +60,8 @@ const Hackathons = () => {
                                                 boxShadow: '0 4px 15px rgba(52, 211, 153, 0.4)',
                                             }}
                                         >
-                                            🏆 {hackathon.achievement}
+                                            {hackathon.achievement.toLowerCase().includes('organizing') ? '' : '🏆 '}
+                                            {hackathon.achievement}
                                         </div>
                                     )}
                                     <img

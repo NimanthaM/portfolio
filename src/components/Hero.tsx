@@ -53,6 +53,7 @@ const Hero = () => {
                     right: '-200px',
                     animation: 'float 25s ease-in-out infinite',
                     filter: 'blur(80px)',
+                    zIndex: 0,
                 }}
             />
             <div
@@ -66,6 +67,7 @@ const Hero = () => {
                     left: '-200px',
                     animation: 'float 30s ease-in-out infinite reverse',
                     filter: 'blur(80px)',
+                    zIndex: 0,
                 }}
             />
 
@@ -177,6 +179,8 @@ const Hero = () => {
                             backgroundClip: 'text',
                             animation: 'fadeIn 1s ease-out 0.2s backwards',
                             textShadow: '0 0 40px rgba(96, 165, 250, 0.3)',
+                            fontFamily: '\'Orbitron\', sans-serif',
+                            letterSpacing: '0.05em',
                         }}
                     >
                         Nimantha Madushan
@@ -215,6 +219,8 @@ const Hero = () => {
                             justifyContent: 'center',
                             flexWrap: 'wrap',
                             animation: 'fadeIn 1s ease-out 0.8s backwards',
+                            position: 'relative',
+                            zIndex: 10,
                         }}
                     >
                         <button
@@ -225,6 +231,8 @@ const Hero = () => {
                                 color: 'white',
                                 border: 'none',
                                 boxShadow: 'var(--shadow-glow)',
+                                position: 'relative',
+                                zIndex: 10,
                             }}
                         >
                             Get In Touch
@@ -237,6 +245,8 @@ const Hero = () => {
                                 color: 'var(--primary-color)',
                                 border: '2px solid var(--primary-color)',
                                 backdropFilter: 'blur(10px)',
+                                position: 'relative',
+                                zIndex: 10,
                             }}
                         >
                             View My Work
