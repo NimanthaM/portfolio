@@ -143,7 +143,7 @@ const About = () => {
                                     gap: '0.75rem',
                                 }}
                             >
-                                {['HTML/CSS', 'REST APIs', 'MongoDB', 'SQL', 'Docker', 'AWS'].map(
+                                {['HTML/CSS', 'REST APIs', 'MongoDB', 'SQL', 'Docker', 'AWS', 'Figma', 'Postman'].map(
                                     (tech, index) => (
                                         <span
                                             key={index}
