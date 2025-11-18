@@ -60,7 +60,7 @@ export const hackathons: Hackathon[] = [
             'Beauty of Cloud is a Cloud based Ideathon organized by IEEE Student Branch of University of Sri Jayewardenepura. Reaching the Finals was a truly rewarding milestone for us.',
         detailedDescription:
             'Team SkyDevs from University of Colombo School of Computing had the amazing opportunity to compete in the Beauty of Cloud Ideathon, organized by the IEEE Student Branch of University of Sri Jayewardenepura. We presented a AWS services based solution that leveraged cloud computing to address a real-world challenge.Reaching the Finals was a truly rewarding milestone for us. Throughout this journey, we were able to brainstorm innovative solutions, strengthen our technical and problem-solving skills, and most importantly, experience the power of teamwork and collaboration.',
-        achievement: 'Finalysts - Top 5',
+        achievement: 'Finalists - Top 5',
         technologies: [],
         teamSize: 5,
         
