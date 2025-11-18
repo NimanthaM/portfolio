@@ -21,7 +21,7 @@ export const hackathons: Hackathon[] = [
         id: 1,
         title: 'Hacktivate \'25',
         event: 'NSBM Green University',
-        date:  '2025',
+        date:  'September, 2025',
         description:
             'Developed a collaborative university web based platform for seamless interaction between Students and Lecturers. The platform includes features such as course management, assignment submissions, grading systems, and real-time notifications to enhance the academic experience.',
         detailedDescription:
@@ -55,7 +55,7 @@ export const hackathons: Hackathon[] = [
         id: 2,
         title: 'Beauty of Cloud ',
         event: 'Facalty of Engineering, University of Jayawardenepura',
-        date: '2025',
+        date: 'August, 2025',
         description:
             'Beauty of Cloud is a Cloud based Ideathon organized by IEEE Student Branch of University of Sri Jayewardenepura. Reaching the Finals was a truly rewarding milestone for us.',
         detailedDescription:
@@ -80,7 +80,7 @@ export const hackathons: Hackathon[] = [
         id: 3,
         title: 'Code Quest',
         event: 'Virtusa',
-        date: 'September 20-22, 2024',
+        date: 'June, 2025',
         description:
             'I had an opportunity to be part of the organizing committee as a Program Team member for Code Quest: Vault Edition, a CTF based hackathon event organized by IEEE Student branch of UCSC. This experience allowed me to contribute to the planning and execution of the event, ensuring a smooth and engaging experience for all participants.',
         achievement: 'Organizing Committee ',

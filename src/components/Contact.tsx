@@ -34,7 +34,7 @@ const Contact = () => {
                         fontSize: '1.1rem',
                     }}
                 >
-                    I'm currently looking for internship opportunities. Whether you have a question or just
+                     Whether you have a question or just
                     want to say hi, feel free to reach out!
                 </p>
 
