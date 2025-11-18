@@ -62,7 +62,7 @@ const About = () => {
                                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
                                     University Of Colombo School of Computing
                                     <br />
-                                    Expected Graduation: 2025
+                                    Expected Graduation: 2026
                                     <br />
                                     Current GPA: 3.4
                                 </p>
